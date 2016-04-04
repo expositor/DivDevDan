@@ -3,28 +3,45 @@ using System.Collections;
 
 public class Moop : MonoBehaviour
 {
-    string myName;
-    float speed = 10;
+    public Rigidbody rb;
+    public float speed;
 
-	// Use this for initialization
 	void Start ()
 	{
-	    Debug.Log("Moop: " + myName);
+        rb = GetComponent<Rigidbody>();
+
+        speed = 0.1F;
 	}
-	// Update is called once per frame
+
 	void Update ()
 	{
-        float distanceh = speed * Time.deltaTime * Input.GetAxis("Horizontal");
-        float distancev = speed * Time.deltaTime * Input.GetAxis("Vertical");
-	    if (Input.GetKey("space"))
+	    if (Input.GetAxis("Horizontal") != 0)
         {
-            transform.Rotate(distanceh * Input.GetAxis("Horizontal"), 0, 0);
-            transform.Rotate(0, distancev * Input.GetAxis("Vertical"), 0);
+            rb.MovePosition(rb.position + new Vector3(Mathf.Sign(Input.GetAxis("Horizontal")) * speed, 0, 0) );
         }
-        else
+
+	    if (Input.GetAxis("Vertical") != 0)
         {
-            transform.Translate(distanceh, 0, 0);
-            transform.Translate(0, distancev, 0);
+            rb.MovePosition(rb.position + new Vector3(0, Mathf.Sign(Input.GetAxis("Vertical")) * speed, 0) );
         }
+	    // if (Input.GetAxis("Horizontal") != 0 & rb.velocity.x == 0)
+        // {
+        //     rb.AddForce(speed * Mathf.Sign(Input.GetAxis("Horizontal")),0,0);
+        // }
+        // else if (rb.velocity.x != 0)
+        // {
+        //     rb.AddForce(-speed * 0.5F * Mathf.Sign(rb.velocity.x), 0, 0);
+        // }
+        //
+        // if (Input.GetAxis("Vertical") != 0 & rb.velocity.y < 10)
+        // {
+        //     rb.AddForce(0,speed * Mathf.Sign(Input.GetAxis("Vertical")),0);
+        // }
+        // else if (rb.velocity.y != 0)
+        // {
+        //     rb.AddForce(0, -speed * Mathf.Sign(rb.velocity.y), 0);
+        // }
+
 	}
+
 }
