@@ -5,7 +5,6 @@ public class Moop : MonoBehaviour
 {
     public Rigidbody rb;
     public float speed;
-<<<<<<< HEAD
     Camera cam;
 
     public static boolit shoot(Vector3 location, float direction)
@@ -18,10 +17,8 @@ public class Moop : MonoBehaviour
     	shot.p = direction;
     	return shot;
     }
-=======
     private int jump;
     private bool button;
->>>>>>> 3DCollisionStuffs
 
 	void Start ()
 	{
@@ -44,7 +41,6 @@ public class Moop : MonoBehaviour
             rb.MovePosition(rb.position + new Vector3(0, 0, Input.GetAxis("Vertical") * speed) );
         }
 
-<<<<<<< HEAD
         if (Input.GetMouseButtonDown(0)) {
         	Vector3 mpos = Input.mousePosition;
         	Vector3 spos = cam.WorldToScreenPoint(transform.position);
@@ -75,7 +71,6 @@ public class Moop : MonoBehaviour
         	}
         }
 
-=======
 	    if (Input.GetButtonDown("Jump") & button == false)
         {
             button = true;
@@ -93,5 +88,4 @@ public class Moop : MonoBehaviour
         if (collision.gameObject.tag.Equals("Jumpable")) { jump = 2; }
     }
 
->>>>>>> 3DCollisionStuffs
 }
