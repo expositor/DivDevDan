@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/scenes/titlescreen.unity
   - enabled: 1
     path: Assets/scenes/moop.unity
+  - enabled: 1
+    path: Assets/scenes/true-falseit.unity
