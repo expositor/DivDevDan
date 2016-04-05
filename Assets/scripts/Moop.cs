@@ -63,7 +63,26 @@ public class Moop : MonoBehaviour
         	f.hp = 1;
         	f.dr = 10;
         	f.ddr = -9;
+		}
+
+        if (Input.GetMouseButtonDown(1)) {
+        	Vector3 mpos = Input.mousePosition;
+        	Vector3 spos = cam.WorldToScreenPoint(transform.position);
+        	float dir = Mathf.Atan2(mpos.y - spos.y, mpos.x - spos.x);
+			for (float i = 0f; i < 6; i++) 
+			{
+	        	boolit f = shoot(transform.position, i * 60);
+	        	f.hp = 2;
+	        	f.dr = 8;
+	        	f.ddr = -2;
+	        	f.dp = 30;
+
+	        	f = shoot(transform.position, i * 60);
+	        	f.hp = 2;
+	        	f.dr = 8;
+	        	f.ddr = -2;
+	        	f.dp = -30;
+        	}
         }
 	}
-
 }
