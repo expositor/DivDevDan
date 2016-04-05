@@ -1,30 +1,33 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Pattern : MonoBehaviour {
+public class pattern : MonoBehaviour {
 
-	float hp = 0f;
+	public float hp = 5f;
 
-	float reload = 0.5f;
+	public float reload = 0.5f;
 	float rtime = 0f;
 
-	float delay = 0.1f;
+	public float delay = 0.1f;
 	float dtime = 0f;
 
-	int mammo = 6;
-	int ammo = 6;
+	public int mammo = 6;
+	int ammo;
 
-	float angle = 0f;
-	float dangle = 0f;
+	public float angle = 0f;
+	public float dangle = 60f;
+	
+	public int shot_count = 5;
+	public float shot_spread = 8f;
+	public float shot_r = 0f;
+	public float shot_dr = 10f;
+	public float shot_ddr = -2f;
+	public float shot_dp = 0f;
+	public float shot_ddp = 0f;
+	public float shot_hp = 5f;
 
-	int shot_count = 5;
-	float shot_spread = 5f;
-	float shot_r = 0f;
-	float shot_dr = 10f;
-	float shot_ddr = -2f;
-	float shot_dp = 0f;
-	float shot_ddp = 0f;
-	float shot_hp = 5f;
+	public GameObject father;
+	bool has_father;
 
     Camera cam;
 
@@ -45,16 +48,32 @@ public class Pattern : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		if (father != null) {
+			has_father = true;
+		}
+		ammo = mammo;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		angle += pps(dangle);
+	
 		hp -= pps(1);
 		if (hp <= 0) {
 			Destroy(gameObject);
 		}
+		if (father == null
+		&& has_father == true) {
+			Destroy(gameObject);
+		}
 
+		if (has_father == true) {
+			Vector3 loc = transform.position;
+			loc.x = father.transform.position.x;
+			loc.y = father.transform.position.y;
+			transform.position = loc;
+		}
+		
 		dtime -= pps(1);
 		if (ammo <= 0) {
 			rtime -= pps(1);

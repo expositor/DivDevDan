@@ -7,7 +7,7 @@ public class Moop : MonoBehaviour
     public float speed;
     Camera cam;
 
-    public static boolit shoot(Vector3 location, float direction)
+    boolit shoot(Vector3 location, float direction)
     {
     	GameObject Shot;
     	Shot = Resources.Load("Boolit") as GameObject;
