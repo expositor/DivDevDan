@@ -3,13 +3,13 @@ using System.Collections;
 
 public class Villain : MonoBehaviour {
 
-    pattern deploy_pattern()
+    Pattern deploy_pattern()
     {
-    	GameObject Pattern;
-    	Pattern = Resources.Load("Pattern") as GameObject;
+    	GameObject pre_pattern;
+		pre_pattern = Resources.Load("Pattern") as GameObject;
 
-    	GameObject go_pattern = Instantiate(Pattern, transform.position, Quaternion.identity) as GameObject;
-		pattern patt = go_pattern.GetComponent<pattern>();
+		GameObject go_pattern = Instantiate(pre_pattern, transform.position, Quaternion.identity) as GameObject;
+		Pattern patt = go_pattern.GetComponent<Pattern>();
 		patt.father = gameObject;
 		return patt;
     }
@@ -29,7 +29,7 @@ public class Villain : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (rtime <= 0) {
-			pattern f = deploy_pattern();
+			Pattern f = deploy_pattern();
 			f.hp = 1;
 			f.shot_count = 7;
 			f.shot_spread = 30f;
@@ -55,7 +55,7 @@ public class Villain : MonoBehaviour {
 		rtime -= pps(1);
 
 		Vector3 loc = transform.position;
-		loc.x += Input.GetAxis("Horizontal");
+		loc.x += Input.GetAxis("Horizontal") * Time.deltaTime * 5;
 		transform.position = loc;
 	}
 }

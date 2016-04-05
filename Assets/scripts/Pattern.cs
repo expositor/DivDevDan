@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class pattern : MonoBehaviour {
+public class Pattern : MonoBehaviour {
 
 	public float hp = 5f;
 
