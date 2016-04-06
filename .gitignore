@@ -18,6 +18,11 @@ ExportedObj/
 *.booproj
 *.svd
 
+# build files
+*.exe
+*.pdb
+DivDevDan_Data/
+
 
 # Unity3D generated meta files
 *.pidb.meta
