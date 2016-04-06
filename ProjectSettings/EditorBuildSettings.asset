@@ -5,15 +5,21 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/scenes/bloop.unity
   - enabled: 1
-    path: Assets/scenes/bleep2.unity
-  - enabled: 1
-    path: Assets/scenes/bleep.unity
-  - enabled: 1
-    path: Assets/scenes/titlescreen.unity
-  - enabled: 1
-    path: Assets/scenes/true-falseit.unity
+    path: Assets/scenes/titlescreenNEW.unity
   - enabled: 1
     path: Assets/scenes/moop.unity
+  - enabled: 1
+    path: Assets/scenes/true-falseit.unity
+  - enabled: 0
+    path: Assets/scenes/pixeltest.unity
+  - enabled: 0
+    path: Assets/PixelCamera2DDemo/Scenes/Main.unity
+  - enabled: 0
+    path: Assets/scenes/bleep2.unity
+  - enabled: 0
+    path: Assets/scenes/bloop.unity
+  - enabled: 0
+    path: Assets/scenes/titlescreen.unity
+  - enabled: 0
+    path: Assets/scenes/bleep.unity
