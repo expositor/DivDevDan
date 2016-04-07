@@ -52,9 +52,6 @@ public class Moop : MonoBehaviour
 		}
 
         if (Input.GetMouseButtonDown(1)) {
-        	Vector3 mpos = Input.mousePosition;
-        	Vector3 spos = cam.WorldToScreenPoint(transform.position);
-        	float dir = Mathf.Atan2(mpos.y - spos.y, mpos.x - spos.x);
 			for (float i = 0f; i < 6; i++)
 			{
 	        	boolit f = shoot(transform.position, i * 60);
