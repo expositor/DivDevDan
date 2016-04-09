@@ -6,7 +6,7 @@ public class Villain : MonoBehaviour {
     Pattern deploy_pattern()
     {
     	GameObject pre_pattern;
-		pre_pattern = Resources.Load("Pattern") as GameObject;
+		pre_pattern = Resources.Load("Prefabs/Pattern") as GameObject;
 
 		GameObject go_pattern = Instantiate(pre_pattern, transform.position, Quaternion.identity) as GameObject;
 		Pattern patt = go_pattern.GetComponent<Pattern>();
