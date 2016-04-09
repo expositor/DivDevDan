@@ -46,7 +46,7 @@ public class tilemap : MonoBehaviour
             for (int x = 0; x <= xSize; x++, i++)
             {
                 vertices[i] = new Vector3(x*xGrid-xRes/2, y*yGrid-yRes/2, 0);
-                uv[i] = new Vector2(x, y);
+                uv[i] = new Vector2((float)(x/xSize), (float)(y/ySize));
             }
         }
 
