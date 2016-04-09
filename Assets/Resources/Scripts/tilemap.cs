@@ -10,7 +10,10 @@ public class tilemap : MonoBehaviour
     public int xRes, yRes;
 
     private Vector3[] vertices;
-    public RectTransform rt;
+    private Vector2[] uv;
+    private Color32[] colors;
+
+    private RectTransform rt;
 
 	void Start ()
 	{
@@ -36,17 +39,18 @@ public class tilemap : MonoBehaviour
         mesh.name = "Moop";
 
         vertices = new Vector3[(xSize + 1) * (ySize + 1)];
+        uv = new Vector2[vertices.Length];
 
         for (int i = 0, y = 0; y <= ySize; y++)
         {
             for (int x = 0; x <= xSize; x++, i++)
             {
                 vertices[i] = new Vector3(x*xGrid-xRes/2, y*yGrid-yRes/2, 0);
+                uv[i] = new Vector2(x, y);
             }
         }
 
-        mesh.vertices = vertices;
-        int[] triangles = new int[xSize * ySize * 6 * 2];
+        int[] triangles = new int[xSize * ySize * 12];
 
         for (int ti = 0, vi = 0, y = 0; y < ySize; y++, ti += 6, vi++)
         {
@@ -61,22 +65,29 @@ public class tilemap : MonoBehaviour
 
         }
 
+        // colors = new Color32[(xSize + 1) * (ySize + 1)];
+        // for (int i = 0, y = 0; y <= ySize; y++, i += xSize+1)
+        // {
+        //     for (int x = 0; x <= xSize; x++)
+        //     {
+        //         colors[i + x] = new Color32((byte)(255/(xSize+1)*x),(byte)(255/(ySize+1)*y),0,255);
+        //     }
+        // }
+        //
+        // for (int i = 0; i < xSize; i++)
+        // {
+        //     colors[i] = colors[i+1] = colors[i+xSize+1] = colors[i+xSize+2] = new Color32((byte)(i * 255/xSize), 0, 0, 255);
+        // }
+
+        Texture2D tex = (Texture2D)Resources.Load("Graphics/Bulbingsworth");
+
+        gameObject.GetComponent<Renderer>().material.mainTexture = tex;
+
+
+        mesh.vertices = vertices;
+        mesh.uv = uv;
         mesh.triangles = triangles;
-
-    }
-
-    private void OnDrawGizmos()
-    {
-        if (vertices == null)
-        {
-            return;
-        }
-
-        Gizmos.color = Color.white;
-        for (int i = 0; i < vertices.Length; i++)
-        {
-            Gizmos.DrawSphere(rt.TransformPoint(vertices[i]), 0.1F);
-        }
+        mesh.colors32 = colors;
 
     }
 

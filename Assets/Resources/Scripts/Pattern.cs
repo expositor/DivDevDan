@@ -34,7 +34,7 @@ public class Pattern : MonoBehaviour {
     boolit shoot(Vector3 location, float direction)
     {
     	GameObject Shot;
-    	Shot = Resources.Load("Boolit") as GameObject;
+    	Shot = Resources.Load("Prefabs/Boolit") as GameObject;
 
     	GameObject go_shot = Instantiate(Shot, location, Quaternion.identity) as GameObject;
     	boolit shot = go_shot.GetComponent<boolit>();
