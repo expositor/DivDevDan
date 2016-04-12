@@ -55,12 +55,15 @@ public class tilemap : MonoBehaviour
         uv = new Vector2[xSize * ySize * 4];
         int[] triangles = new int[xSize * ySize * 6];
 
+        Texture2D tm = (Texture2D)Resources.Load("Graphics/testtiles");
+        gameObject.GetComponent<Renderer>().material.mainTexture = tm;
+
         Tile[,] tiles = new Tile[,]
         {
             {new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1)},
-            {new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1)},
-            {new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1)},
-            {new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1)},
+            {new Tile(1,1),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1)},
+            {new Tile(1,2),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1)},
+            {new Tile(1,3),new Tile(2, 3),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1)},
             {new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1)},
             {new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1)},
             {new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1)},
@@ -77,8 +80,6 @@ public class tilemap : MonoBehaviour
             {new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1),new Tile(1,0),new Tile(1, 1)}
         };
 
-        Debug.Log("Moop: " + tiles.Length);
-
         for (int i = 0, ti = 0, y = 0; y < ySize; y++)
         {
 
@@ -89,11 +90,10 @@ public class tilemap : MonoBehaviour
                 vertices[i+1] = new Vector3(x*xGrid-xRes/2, (y+1)*yGrid-yRes/2);
                 vertices[i+2] = new Vector3((x+1)*xGrid-xRes/2, (y+1)*yGrid-yRes/2);
                 vertices[i+3] = new Vector3((x+1)*xGrid-xRes/2, y*yGrid-yRes/2);
-                Debug.Log("x: " + tiles[y,x].x + "/ y: " + tiles[y,x].y);
-                uv[i] = new Vector2( ( tiles[y,x].x ) * 0.055555555F, ( tiles[y,x].y ) * 0.055555555F);
-                uv[i+1] = new Vector2( ( tiles[y,x].x ) * 0.055555555F, ( tiles[y,x].y + 1 ) * 0.055555555F);
-                uv[i+2] = new Vector2( ( tiles[y,x].x + 1 ) * 0.055555555F, ( tiles[y,x].y + 1 ) * 0.055555555F);
-                uv[i+3] = new Vector2( ( tiles[y,x].x + 1 ) * 0.055555555F, ( tiles[y,x].y ) * 0.055555555F);
+                uv[i] = new Vector2( ( tiles[y,x].x ) * (16F/tm.width), ( tiles[y,x].y ) * (16F/tm.height));
+                uv[i+1] = new Vector2( ( tiles[y,x].x ) * (16F/tm.width), ( tiles[y,x].y + 1 ) * (16F/tm.height));
+                uv[i+2] = new Vector2( ( tiles[y,x].x + 1 ) * (16F/tm.width), ( tiles[y,x].y + 1 ) * (16F/tm.height));
+                uv[i+3] = new Vector2( ( tiles[y,x].x + 1 ) * (16F/tm.width), ( tiles[y,x].y ) * (16F/tm.height));
                 // uv[i] = new Vector2((float)x/xSize, (float)y/ySize);
                 // uv[i+1] = new Vector2((float)x/xSize, (float)(y+1)/ySize);
                 // uv[i+2] = new Vector2((float)(x+1)/xSize, (float)(y+1)/ySize);
@@ -137,7 +137,6 @@ public class tilemap : MonoBehaviour
     {
         // uv = new Vector2[vertices.Length];
         //
-        Texture2D tm = (Texture2D)Resources.Load("Graphics/TM1");
         //
         // List<int> mapping = new List<int>();
         // mapping.Add(2);
@@ -162,7 +161,6 @@ public class tilemap : MonoBehaviour
         // uv[2] = new Vector2((float)(2*1/32), (float)(1/32));
         // uv[3] = new Vector2((float)(2*1/32), 0);
         // mesh.uv = uv;
-        gameObject.GetComponent<Renderer>().material.mainTexture = tm;
 
     }
 
