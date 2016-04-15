@@ -6,6 +6,16 @@ public class globalscript : MonoBehaviour
 {
     static globalscript instance;
 
+    float sims = 1;
+
+    public float pps(float a) {
+    	return a * sims * Time.deltaTime;
+    }
+
+    public float set_sims(float a) {
+    	sims = a;
+    }
+    
     public static globalscript Instance
     {
         get
