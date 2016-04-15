@@ -52,7 +52,7 @@ public class Villain : MonoBehaviour {
 			// f.shot_dp = -20f;
 			rtime = reload;
 		}
-		rtime -= pps(1);
+		rtime -= globalscript.Instance.pps(1);
 
 		Vector3 loc = transform.position;
 		loc.x += Input.GetAxis("Horizontal") * Time.deltaTime * 50;

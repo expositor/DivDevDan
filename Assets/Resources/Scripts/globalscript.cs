@@ -12,7 +12,7 @@ public class globalscript : MonoBehaviour
     	return a * sims * Time.deltaTime;
     }
 
-    public float set_sims(float a) {
+    public void set_sims(float a) {
     	sims = a;
     }
     
