@@ -22,6 +22,11 @@ public class globalscript : MonoBehaviour
         }
     }
 
+    public void SwitchScene(string scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+
     private void Awake()
     {
         if (instance != null && instance != this)

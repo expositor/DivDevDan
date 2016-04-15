@@ -39,23 +39,24 @@ public class Villain : MonoBehaviour {
 			f.mammo = 20;
 			f.shot_r = 0.5f;
 
-			f = deploy_pattern();
-			f.hp = 2;
-			f.shot_count = 20;
-			f.shot_spread = 18f;
-			f.dangle = -18f;
-			f.delay = 0.5f;
-			f.mammo = 20;
-			f.shot_r = 0.5f;
-			f.shot_dr = 5f;
-			f.shot_ddr = -0.5f;
-			f.shot_dp = -20f;
+			// Pattern f = deploy_pattern();
+			// f.hp = 2;
+			// f.shot_count = 20;
+			// f.shot_spread = 18f;
+			// f.dangle = -18f;
+			// f.delay = 0.5f;
+			// f.mammo = 20;
+			// f.shot_r = 0.5f;
+			// f.shot_dr = 5f;
+			// f.shot_ddr = -0.5f;
+			// f.shot_dp = -20f;
 			rtime = reload;
 		}
 		rtime -= pps(1);
 
 		Vector3 loc = transform.position;
-		loc.x += Input.GetAxis("Horizontal") * Time.deltaTime * 5;
+		loc.x += Input.GetAxis("Horizontal") * Time.deltaTime * 50;
+		loc.y += Input.GetAxis("Vertical") * Time.deltaTime * 50;
 		transform.position = loc;
 	}
 }

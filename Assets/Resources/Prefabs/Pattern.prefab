@@ -40,18 +40,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 5
-  reload: 0.5
+  reload: 1
   delay: 0.1
-  mammo: 6
-  angle: 0
-  dangle: 60
-  shot_count: 5
-  shot_spread: 8
-  shot_r: 0
+  mammo: 1
+  angle: 120
+  dangle: 7
+  shot_count: 1
+  shot_spread: 11
+  shot_r: 3200
   shot_dr: 10
-  shot_ddr: -2
-  shot_dp: 0
-  shot_ddp: 0
+  shot_ddr: 20
+  shot_dp: 150
+  shot_ddp: 20
   shot_hp: 5
   father: {fileID: 0}
 --- !u!1001 &100100000

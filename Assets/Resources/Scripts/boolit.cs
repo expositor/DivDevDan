@@ -6,7 +6,7 @@ public class boolit : MonoBehaviour {
 	public float r = 1f;
 	public float dp = 0f;
 	public float dr = 0f;
-	public float ddp = 0f;
+    public float ddp = 0f;
 	public float ddr = 0f;
 	public float hp = 10f;
 
