@@ -22,6 +22,7 @@ ExportedObj/
 *.exe
 *.pdb
 DivDevDan_Data/
+*.7z
 
 
 # Unity3D generated meta files
