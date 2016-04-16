@@ -6,7 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/titlescreenNEW2.unity
+    path: Assets/Scenes/init.unity
+  - enabled: 1
+    path: Assets/Scenes/titlescreen.unity
   - enabled: 1
     path: Assets/Scenes/moop.unity
   - enabled: 1

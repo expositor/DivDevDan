@@ -256,6 +256,7 @@ GameObject:
   - 222: {fileID: 244161860}
   - 114: {fileID: 244161859}
   - 114: {fileID: 244161858}
+  - 114: {fileID: 244161861}
   m_Layer: 5
   m_Name: Button "STUFF"
   m_TagString: Untagged
@@ -320,7 +321,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 901556443}
+      - m_Target: {fileID: 0}
         m_MethodName: SwitchScene
         m_Mode: 5
         m_Arguments:
@@ -366,6 +367,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 244161856}
+--- !u!114 &244161861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 244161856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1004c29bfe3b2418692672082833c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switchToScene: tilething
 --- !u!1 &368604108
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,6 +606,7 @@ GameObject:
   - 222: {fileID: 644456160}
   - 114: {fileID: 644456159}
   - 114: {fileID: 644456158}
+  - 114: {fileID: 644456161}
   m_Layer: 5
   m_Name: Button "RUN"
   m_TagString: Untagged
@@ -657,7 +671,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 901556443}
+      - m_Target: {fileID: 0}
         m_MethodName: SwitchScene
         m_Mode: 5
         m_Arguments:
@@ -703,45 +717,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 644456156}
---- !u!1 &901556441
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 901556442}
-  - 114: {fileID: 901556443}
-  m_Layer: 0
-  m_Name: ~globalscript
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
---- !u!4 &901556442
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 901556441}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
---- !u!114 &901556443
+--- !u!114 &644456161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 901556441}
+  m_GameObject: {fileID: 644456156}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15243efba06ea8341af6bcd6bc794642, type: 3}
+  m_Script: {fileID: 11500000, guid: fa1004c29bfe3b2418692672082833c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  switchToScene: true-falseit
 --- !u!1 &949039297
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +983,45 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 990207377}
+--- !u!1 &1124615317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1124615319}
+  - 114: {fileID: 1124615318}
+  m_Layer: 0
+  m_Name: ~globalscript
+  m_TagString: global
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 4294967295
+  m_IsActive: 1
+--- !u!114 &1124615318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1124615317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15243efba06ea8341af6bcd6bc794642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1124615319
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1124615317}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
 --- !u!1 &1367528835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,6 +1351,7 @@ GameObject:
   - 222: {fileID: 1986729761}
   - 114: {fileID: 1986729760}
   - 114: {fileID: 1986729759}
+  - 114: {fileID: 1986729762}
   m_Layer: 5
   m_Name: Button "START"
   m_TagString: Untagged
@@ -1389,15 +1416,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 901556443}
-        m_MethodName: SwitchScene
-        m_Mode: 5
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: moop
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -1435,6 +1462,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1986729757}
+--- !u!114 &1986729762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1986729757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1004c29bfe3b2418692672082833c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switchToScene: moop
 --- !u!1 &2084098017
 GameObject:
   m_ObjectHideFlags: 0

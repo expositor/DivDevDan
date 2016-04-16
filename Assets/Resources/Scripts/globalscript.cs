@@ -29,14 +29,14 @@ public class globalscript : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null && instance != this)
-        {
-
-            Destroy(this.gameObject);
-            return;
-
-        }
-
+        // if (instance != null && instance != this)
+        // {
+        //
+        //     Destroy(this.gameObject);
+        //     return;
+        //
+        // }
+        //
         instance = this;
         DontDestroyOnLoad( this.gameObject );
     }
@@ -47,8 +47,8 @@ public class globalscript : MonoBehaviour
         if (e.Equals(Event.KeyboardEvent("escape")))
         {
 
-            if (SceneManager.GetActiveScene().name.Equals("titlescreenNEW2")) { Application.Quit(); }
-            else { SceneManager.LoadScene("titlescreenNEW2"); }
+            if (SceneManager.GetActiveScene().name.Equals("titlescreen")) { Application.Quit(); }
+            else { SceneManager.LoadScene("titlescreen"); }
 
         }
 

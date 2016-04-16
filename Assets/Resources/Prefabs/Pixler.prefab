@@ -34,7 +34,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &167284
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,14 +46,13 @@ GameObject:
   - 223: {fileID: 22376112}
   - 114: {fileID: 11425366}
   - 114: {fileID: 11442026}
-  - 114: {fileID: 11471282}
   m_Layer: 5
   m_Name: RenderCanvas (STUFF GOES IN HERE)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &181286
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,14 +65,13 @@ GameObject:
   - 124: {fileID: 12421652}
   - 92: {fileID: 9223582}
   - 81: {fileID: 8134734}
-  - 114: {fileID: 11454106}
   m_Layer: 0
   m_Name: DisplayCam (DON'T TOUCH THIS)
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &187046
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,7 +86,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &190156
 GameObject:
   m_ObjectHideFlags: 1
@@ -356,28 +354,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 0
---- !u!114 &11454106
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 181286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6059801a134993d40ae8a89dac76591e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11471282
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 167284}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2227f81f8504e764e92f980e90bee29e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!124 &12421652
 Behaviour:
   m_ObjectHideFlags: 1
