@@ -9,8 +9,6 @@ using System;
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class Tilemesh : MonoBehaviour
 {
-
-    private int xSize, ySize;
     public int xGrid, yGrid;
     public int xRes, yRes;
     public string tileMap;
@@ -25,35 +23,33 @@ public class Tilemesh : MonoBehaviour
     private Vector2[] uv;
     private void Generate()
     {
-        xSize = xRes / xGrid;
-        ySize = yRes / yGrid;
-
         GetComponent<MeshFilter>().mesh = mesh = new Mesh();
         mesh.name = "Tilemesh";
 
 
-        Vector3[] vertices = new Vector3[xSize * ySize * 4];
-        uv = new Vector2[xSize * ySize * 4];
-        int[] triangles = new int[xSize * ySize * 6];
-
         Texture2D tm = (Texture2D)Resources.Load("Tilemaps/" + tileMap);
         gameObject.GetComponent<Renderer>().material.mainTexture = tm;
+        int tileNumX = tm.width / xGrid;
+        int tileNumY = tm.height / yGrid;
 
-        int[] tiles = new int[ySize * xSize];
+        int xSize = 0;
+        int ySize = 0;
+
+        List<int> temp = new List<int>();
 
         try
         {
             using (StreamReader mapParser = new StreamReader("Assets/Resources/Maps/" + map + ".csv") )
             {
                 string line;
-                List<int> temp = new List<int>();
 
                 while ( (line = mapParser.ReadLine() ) != null )
                 {
                     temp.AddRange(line.Split(',').Select( i => int.Parse(i) ) );
+                    ySize++;
                 }
 
-                tiles = temp.ToArray();
+
             }
 
         }
@@ -63,8 +59,12 @@ public class Tilemesh : MonoBehaviour
             Debug.Log(e);
         }
 
-        int tileNumX = tm.width / xGrid;
-        int tileNumY = tm.height / yGrid;
+        int[] tiles = temp.ToArray();
+        xSize = tiles.Length / ySize;
+
+        Vector3[] vertices = new Vector3[xSize * ySize * 4];
+        uv = new Vector2[xSize * ySize * 4];
+        int[] triangles = new int[xSize * ySize * 6];
 
         for (int i = 0, ti = 0, vi = 0, y = ySize; y > 0; y--)
         {
