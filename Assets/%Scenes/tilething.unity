@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollDistanceX: 150
   scrollDistanceY: 75
+  scrollSpeed: 1.2
 --- !u!1 &625934801
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +253,7 @@ MonoBehaviour:
   xRes: 512
   yRes: 288
   tileMap: testtiles
-  map: TM1
+  map: biggu
 --- !u!23 &1683520510
 MeshRenderer:
   m_ObjectHideFlags: 0

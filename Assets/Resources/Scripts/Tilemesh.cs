@@ -26,7 +26,6 @@ public class Tilemesh : MonoBehaviour
         GetComponent<MeshFilter>().mesh = mesh = new Mesh();
         mesh.name = "Tilemesh";
 
-
         Texture2D tm = (Texture2D)Resources.Load("Tilemaps/" + tileMap);
         gameObject.GetComponent<Renderer>().material.mainTexture = tm;
         int tileNumX = tm.width / xGrid;
@@ -34,7 +33,6 @@ public class Tilemesh : MonoBehaviour
 
         int xSize = 0;
         int ySize = 0;
-
         List<int> temp = new List<int>();
 
         try
@@ -60,7 +58,13 @@ public class Tilemesh : MonoBehaviour
         }
 
         int[] tiles = temp.ToArray();
-        xSize = tiles.Length / ySize;
+
+        Globalscript.Instance.tilesX = xSize = tiles.Length / ySize;
+        Globalscript.Instance.tilesY = ySize;
+        Globalscript.Instance.dimX = xGrid;
+        Globalscript.Instance.dimY = yGrid;
+        Globalscript.Instance.pixelsX = xSize * xGrid;
+        Globalscript.Instance.pixelsY = ySize * yGrid;
 
         Vector3[] vertices = new Vector3[xSize * ySize * 4];
         uv = new Vector2[xSize * ySize * 4];
@@ -74,23 +78,23 @@ public class Tilemesh : MonoBehaviour
 
                 vertices[i] = new Vector3
                     (
-                        ( ( x + 0 ) * xGrid - xRes / 2 ),
-                        ( ( y - 0 ) * yGrid - yRes / 2 )
+                        ( ( x + 0 ) * xGrid - ( xSize * xGrid) / 2 ),
+                        ( ( y - 0 ) * yGrid - ( ySize * yGrid) / 2 )
                     );
                 vertices[i+1] = new Vector3
                     (
-                        ( ( x + 0 ) * xGrid - xRes / 2 ),
-                        ( ( y - 1 ) * yGrid - yRes / 2 )
+                        ( ( x + 0 ) * xGrid - ( xSize * xGrid) / 2 ),
+                        ( ( y - 1 ) * yGrid - ( ySize * yGrid) / 2 )
                     );
                 vertices[i+2] = new Vector3
                     (
-                        ( ( x + 1 ) * xGrid - xRes / 2 ),
-                        ( ( y - 1 ) * yGrid - yRes / 2 )
+                        ( ( x + 1 ) * xGrid - ( xSize * xGrid) / 2 ),
+                        ( ( y - 1 ) * yGrid - ( ySize * yGrid) / 2 )
                     );
                 vertices[i+3] = new Vector3
                     (
-                        ( ( x + 1 ) * xGrid - xRes / 2 ),
-                        ( ( y - 0 ) * yGrid - yRes / 2 )
+                        ( ( x + 1 ) * xGrid - ( xSize * xGrid) / 2 ),
+                        ( ( y - 0 ) * yGrid - ( ySize * yGrid) / 2 )
                     );
                 uv[i] = new Vector2
                     (

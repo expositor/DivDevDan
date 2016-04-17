@@ -16,6 +16,10 @@ public class Globalscript : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
+    public int tilesX, tilesY;
+    public int dimX, dimY;
+    public int pixelsX, pixelsY;
+
     void Start()
     {
         DontDestroyOnLoad(gameObject);
