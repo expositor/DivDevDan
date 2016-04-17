@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class rotatingsword : MonoBehaviour
+public class Rotater : MonoBehaviour
 {
 
 	void Start ()

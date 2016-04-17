@@ -5,16 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/init.unity
   - enabled: 1
-    path: Assets/Scenes/titlescreen.unity
+    path: Assets/%Scenes/titlescreen.unity
   - enabled: 1
-    path: Assets/Scenes/moop.unity
+    path: Assets/%Scenes/moop.unity
   - enabled: 1
-    path: Assets/Scenes/true-falseit.unity
+    path: Assets/%Scenes/true-falseit.unity
   - enabled: 1
-    path: Assets/Scenes/tilething.unity
+    path: Assets/%Scenes/tilething.unity
   - enabled: 0
     path: Assets/Scenes/titlescreenNEW.unity
   - enabled: 0
@@ -26,6 +26,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/scenes/bloop.unity
   - enabled: 0
-    path: Assets/scenes/titlescreen.unity
+    path: Assets/%Scenes/titlescreen.unity
   - enabled: 0
     path: Assets/scenes/bleep.unity

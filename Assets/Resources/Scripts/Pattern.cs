@@ -31,13 +31,13 @@ public class Pattern : MonoBehaviour {
 
     Camera cam;
 
-    boolit shoot(Vector3 location, float direction)
+    Boolit shoot(Vector3 location, float direction)
     {
     	GameObject Shot;
     	Shot = Resources.Load("Prefabs/Boolit") as GameObject;
 
     	GameObject go_shot = Instantiate(Shot, location, Quaternion.identity) as GameObject;
-    	boolit shot = go_shot.GetComponent<boolit>();
+    	Boolit shot = go_shot.GetComponent<Boolit>();
     	shot.p = direction;
     	return shot;
     }
@@ -91,7 +91,7 @@ public class Pattern : MonoBehaviour {
 			dtime = delay;
 			float oangle = shot_spread * (shot_count - 1) / 2;
 			for (float i = 0f; i < shot_count; i++) {
-				boolit f = shoot(transform.position, angle - oangle + shot_spread*i);
+				Boolit f = shoot(transform.position, angle - oangle + shot_spread*i);
 				f.r = shot_r;
 				f.dr = shot_dr;
 				f.ddr = shot_ddr;

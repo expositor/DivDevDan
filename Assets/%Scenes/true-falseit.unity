@@ -365,7 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e3c087a4b3f6448b335587e630f6e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letterboxing: 1
+  letterboxing: 0
+  aspectRatio: 1.77777777777778
 --- !u!81 &2144003775
 AudioListener:
   m_ObjectHideFlags: 0

@@ -2,24 +2,13 @@
 using UnityEngine.SceneManagement;
 using System.Collections;
 
-public class globalscript : MonoBehaviour
+public class Globalscript : MonoBehaviour
 {
-    static globalscript instance;
+    static Globalscript instance;
 
-    public static globalscript Instance
+    public static Globalscript Instance
     {
-        get
-        {
-            if (instance == null) { instance = FindObjectOfType<globalscript>(); }
-            if (instance == null)
-            {
-                GameObject obj = new GameObject("Globalscript");
-                obj.hideFlags = HideFlags.HideAndDontSave;
-                instance = obj.AddComponent<globalscript>();
-            }
-
-            return instance;
-        }
+        get { return instance; }
     }
 
     public void SwitchScene(string scene)
@@ -27,28 +16,20 @@ public class globalscript : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
-    private void Awake()
+    void Start()
     {
-        // if (instance != null && instance != this)
-        // {
-        //
-        //     Destroy(this.gameObject);
-        //     return;
-        //
-        // }
-        //
+        DontDestroyOnLoad(gameObject);
         instance = this;
-        DontDestroyOnLoad( this.gameObject );
     }
 
 	void OnGUI()
     {
         Event e = Event.current;
-        if (e.Equals(Event.KeyboardEvent("escape")))
+        if (e.Equals(Event.KeyboardEvent("Escape")))
         {
 
-            if (SceneManager.GetActiveScene().name.Equals("titlescreen")) { Application.Quit(); }
-            else { SceneManager.LoadScene("titlescreen"); }
+            if (SceneManager.GetActiveScene().name.Equals("Titlescreen")) { Application.Quit(); }
+            else { SceneManager.LoadScene("Titlescreen"); }
 
         }
 

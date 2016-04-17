@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Jumpable
-  - global
+  - '%Global'
   layers:
   - Default
   - TransparentFX

@@ -7,13 +7,13 @@ public class Moop : MonoBehaviour
     public float speed;
     Camera cam;
 
-    boolit shoot(Vector3 location, float direction)
+    Boolit shoot(Vector3 location, float direction)
     {
     	GameObject Shot;
     	Shot = Resources.Load("Boolit") as GameObject;
 
     	GameObject go_shot = Instantiate(Shot, location, Quaternion.identity) as GameObject;
-    	boolit shot = go_shot.GetComponent<boolit>();
+    	Boolit shot = go_shot.GetComponent<Boolit>();
     	shot.p = direction;
     	return shot;
     }
@@ -45,7 +45,7 @@ public class Moop : MonoBehaviour
         	Vector3 mpos = Input.mousePosition;
         	Vector3 spos = cam.WorldToScreenPoint(transform.position);
         	float dir = Mathf.Atan2(mpos.y - spos.y, mpos.x - spos.x);
-        	boolit f = shoot(transform.position, dir * 180 / Mathf.PI);
+        	Boolit f = shoot(transform.position, dir * 180 / Mathf.PI);
         	f.hp = 1;
         	f.dr = 10;
         	f.ddr = -9;
@@ -54,7 +54,7 @@ public class Moop : MonoBehaviour
         if (Input.GetMouseButtonDown(1)) {
 			for (float i = 0f; i < 6; i++)
 			{
-	        	boolit f = shoot(transform.position, i * 60);
+	        	Boolit f = shoot(transform.position, i * 60);
 	        	f.hp = 2;
 	        	f.dr = 8;
 	        	f.ddr = -2;

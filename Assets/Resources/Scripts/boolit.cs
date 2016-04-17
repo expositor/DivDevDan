@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class boolit : MonoBehaviour {
+public class Boolit : MonoBehaviour {
 	public float p = 180f;
 	public float r = 1f;
 	public float dp = 0f;
