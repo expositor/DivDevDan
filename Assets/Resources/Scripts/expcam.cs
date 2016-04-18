@@ -14,11 +14,21 @@ public class expcam : MonoBehaviour {
         resY = 288;
         if (letterboxing)
         {
+        	if (resX <= resY * cam.aspect) {
+        		//Wider/flatter than or equal to 16/9 - Increase width of render texture.
+        		mainRT = new RenderTexture((int)(resY * cam.aspect), resY, 24);
+        	} else {
+        		//Thinner/taller than 16/9 - Increase orthographic size accordingly, increase height of render texture.
+        		mainRT = new RenderTexture(resX, (int)(resX / cam.aspect), 24);
+        		cam.orthographicSize = resX / cam.aspect / 2;
+        	}
+        	/*
             int meep = (int)( (double)resX / cam.aspect / 2D );
             int beep = 2 * meep - resY;
             if (beep < 0) { beep = 0; }
             cam.orthographicSize = meep;
             mainRT = new RenderTexture( resX, resY + beep, 24);
+            */
         }
         else
         {
